@@ -78,6 +78,8 @@ public class Prim5 extends Prim {
         
         if(AZ == 1)
             Arrays.sort(pasc[sorosz - 1]);
+        
         return pasc[sorosz - 1];
     }
+    
 }

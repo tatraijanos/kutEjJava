@@ -41,4 +41,5 @@ public class Prim3 extends Prim {
         keszitCSV(OSZT_NEV);
         return eredmeny();
     }
+    
 }

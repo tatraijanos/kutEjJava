@@ -75,4 +75,5 @@ public class Prim8 extends Prim {
         //return lista.subList(0, szalDb);
         return lista.subList(0, szalDb).toArray(new Integer[szalDb]);
     }
+    
 }

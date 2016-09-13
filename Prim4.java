@@ -13,6 +13,7 @@ public class Prim4 extends Prim {
 
     public String futas() {
         indulIdo = System.currentTimeMillis();
+        
         ExecutorService executor = Executors.newFixedThreadPool(szalDb);
         
         int fibOsszeg = 0;
@@ -32,8 +33,8 @@ public class Prim4 extends Prim {
             executor.execute(new PrimSzal((int)a, (int)b, id));
             
             a += bSeged * fibo[fiboAzon];
-            id ++;
-            fiboAzon --;
+            id++;
+            fiboAzon--;
         }
         executor.shutdown();
         try {
@@ -59,4 +60,5 @@ public class Prim4 extends Prim {
         }
         return fibo;
     }
+    
 }
