@@ -1,6 +1,9 @@
 /*
  * Módosítási napló:
  * 
+ * 0913:
+ *      Indito:
+ *          - parancs() catch ág
  * 0810:
  *      Optimális függvény fusson vagy ne, argumentumból szerzi meg, ha hagyományos futást szeretnénk;
  *      Új tartományok felvétele
@@ -242,14 +245,10 @@ public class Indito{
                 retadm[i] = Byte.valueOf(admin[i]);
             }
             return retadm;
-        } 
-        catch (ArrayIndexOutOfBoundsException | NumberFormatException e){
+        }
+        catch(IOException | NumberFormatException ex){                          //0913
             return null;
         }
-        catch (IOException ex) {
-            Logger.getLogger(Indito.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
     }
     
     private static Integer[] egyediIntvall(byte hossz){
