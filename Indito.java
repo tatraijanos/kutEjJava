@@ -3,7 +3,9 @@
  * 
  * 0913:
  *      Indito:
+ *          - importból is törölhető a logger
  *          - parancs() catch ág
+ *          - sor() és egyediIntvall() catch ág
  * 0810:
  *      Optimális függvény fusson vagy ne, argumentumból szerzi meg, ha hagyományos futást szeretnénk;
  *      Új tartományok felvétele
@@ -23,8 +25,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Indito{
     private static final String[] MODSZERES = new String[16];
@@ -213,10 +213,10 @@ public class Indito{
                 azon = Byte.parseByte(parancs);
                 ok = (kezd <= azon && azon <= vege);
                 if(!ok)
-                    System.out.print("Ismeretlen parancs! Újra!");
+                    System.out.print("Ismeretlen parancs! Újra! ");
             }
-            catch(Exception e){
-                System.out.print("Nem egész! Újra!");
+            catch(IOException | NumberFormatException e){                       //0913
+                System.out.print("Ismeretlen parancs! Újra! ");
             }
         }
         while(!ok);
@@ -270,7 +270,7 @@ public class Indito{
                 else if(daraboltPar.length > hossz)
                     System.out.println("Több számot adott meg a szükségesnél, a maradék eldobásra került.");
             }
-            catch(Exception e){
+            catch(IOException | NumberFormatException e){                       //0913
                 System.out.print("Nem egész! Újra!");
             }
         }
