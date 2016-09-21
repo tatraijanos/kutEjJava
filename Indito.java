@@ -3,6 +3,7 @@
  *
  * 0921:
  *      Indito:
+ *          - #6 - Kivenni a rossz módszereket
  *          - #7 - 1000-es tartomány megszüntetése
  *          - #5 - Átállás 15 szálra
  * 
@@ -32,24 +33,24 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 public class Indito{
-    private static final String[] MODSZERES = new String[16];
+    private static final String[] MODSZERES = new String[13];                   // 0921#6
 
     private static void feltolt() {
         MODSZERES[1] = "Szál nélküli";
         MODSZERES[2] = "Normál";
         MODSZERES[3] = "Hatvány";
         MODSZERES[4] = "Fibonacci";
-        MODSZERES[5] = "Pascal normál";
-        MODSZERES[6] = "Pascal optimális";
-        MODSZERES[7] = "Pascal páratlan";
-        MODSZERES[8] = "Arányos";
-        MODSZERES[9] = "Összetett";
-        MODSZERES[10] = "Prím";
-        MODSZERES[11] = "Félprím";
-        MODSZERES[12] = "Koch-görbe";
-        MODSZERES[13] = "Inverz négyzetes";
-        MODSZERES[14] = "Egyedi";
-        MODSZERES[15] = "Kilépés";
+        //ODSZERES[5] = "Pascal normál";                                        // 0921#6
+        //MODSZERES[6] = "Pascal optimális";
+        //MODSZERES[7] = "Pascal páratlan";
+        MODSZERES[5] = "Arányos";
+        MODSZERES[6] = "Összetett";
+        MODSZERES[7] = "Prím";
+        MODSZERES[8] = "Félprím";
+        MODSZERES[9] = "Koch-görbe";
+        MODSZERES[10] = "Inverz négyzetes";
+        MODSZERES[11] = "Egyedi";
+        MODSZERES[12] = "Kilépés";
     }
 
     public static void main(String[] args) {
@@ -78,7 +79,7 @@ public class Indito{
             szal = 1;
             szaltol = 1;
         }
-        else if(modszer == 14){
+        else if(modszer == MODSZERES.length - 2){                               // 0921#6
             System.out.println("Kérem azokat a számokat (" + szal + " db), amelyekkel a tartományokat kívánjuk felosztani.");
             System.out.println("Formátum példa: 1;2;4;7;11");
             System.out.print("> ");
@@ -112,26 +113,26 @@ public class Indito{
                     case 4:
                         System.out.println(MODSZERES[modszer] + new Prim4(n, szalDb).futas());
                         break;
-                    case 5:
+                    /*case 5:                                                   // 0921#6
                     case 6:
                     case 7:
                         System.out.println(MODSZERES[modszer] + new Prim5(n, szalDb, (byte)(modszer - 5)).futas());
-                        break;
-                    case 8:
+                        break;*/
+                    case 5:                                                     // 0921#6
                         System.out.println(MODSZERES[modszer] + new Prim6(n, szalDb).futas());
                         break;
-                    case 9:
-                    case 10:
-                        System.out.println(MODSZERES[modszer] + new Prim7(n, szalDb, (modszer - 9 == 1)).futas());
+                    case 6:                                                     // 0921#6
+                    case 7:                                                     // 0921#6
+                        System.out.println(MODSZERES[modszer] + new Prim7(n, szalDb, (modszer - 6 == 1)).futas());// 0921#6
                         break;
-                    case 11:
+                    case 8:                                                     // 0921#6
                         System.out.println(MODSZERES[modszer] + new Prim8(n, szalDb).futas());
                         break;
-                    case 12:
-                    case 13:
-                        System.out.println(MODSZERES[modszer] + new Prim9(n, szalDb, (modszer - 12 == 0)).futas());
+                    case 9:                                                     // 0921#6
+                    case 10:                                                    // 0921#6
+                        System.out.println(MODSZERES[modszer] + new Prim9(n, szalDb, (modszer - 10 == 0)).futas());// 0921#6
                         break;
-                    case 14:
+                    case 11:                                                    // 0921#6
                         System.out.println(MODSZERES[modszer] + new Prim10(n, szalDb, tartomanyok).futas());
                 }
                 n *= 10;
