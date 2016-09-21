@@ -1,5 +1,9 @@
 /*
  * Módosítási napló:
+ *
+ * 0921:
+ *      Indito:
+ *          - engedélyezzük 15 szálig (szoveg()-ben)
  * 
  * 0913:
  *      Indito:
@@ -188,9 +192,9 @@ public class Indito{
         funk[1] = sor((byte)1, (byte)7);
         
         funk[2] = 1;
-        if(funk[0] != 1){
-            System.out.print("Kérem, határozza meg a maximális szál számot (1 - 12 közé eshet): ");
-            funk[2] = sor((byte)1, (byte)12);
+        if(funk[0] != 1){                                                       // 0921
+            System.out.print("Kérem, határozza meg a maximális szál számot (1 - 15 közé eshet): ");
+            funk[2] = sor((byte)1, (byte)15);
         }
         
         System.out.println("Mentsük az eredményeket egy CSV fájlba?");
