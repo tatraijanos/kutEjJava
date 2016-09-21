@@ -3,7 +3,8 @@
  *
  * 0921:
  *      Indito:
- *          - engedélyezzük 15 szálig (szoveg()-ben)
+ *          - #7 - 1000-es tartomány megszüntetése
+ *          - #5 - Átállás 15 szálra
  * 
  * 0913:
  *      Indito:
@@ -60,7 +61,7 @@ public class Indito{
         Prim prOsztaly = new Prim(optimalis);
         
         byte modszer, intval, szal;
-        byte szaltol = 1, m = 3;
+        byte szaltol = 1, m = 4;                                                // 0921#7
         
         byte[] funk = szoveg(optimalis);
         modszer = funk[0];
@@ -179,20 +180,20 @@ public class Indito{
                 return parancss;
         }    
         
-        System.out.println("Kérem, válassza ki az intervallumot: ");
-        System.out.println("1 -> 1 - 1000");
-        System.out.println("2 -> 1 - 10000");
-        System.out.println("3 -> 1 - 100000");
-        System.out.println("4 -> 1 - 1000000");
-        System.out.println("5 -> 1 - 10000000");
-        System.out.println("6 -> 1 - 100000000");
-        System.out.println("7 -> 1 - 1000000000");
+        System.out.println("Kérem, válassza ki az intervallumot: ");            // 0921#7
+        //System.out.println("1 -> 1 - 1000");
+        System.out.println("1 -> 1 - 10000");
+        System.out.println("2 -> 1 - 100000");
+        System.out.println("3 -> 1 - 1000000");
+        System.out.println("4 -> 1 - 10000000");
+        System.out.println("5 -> 1 - 100000000");
+        System.out.println("6 -> 1 - 1000000000");
         //System.out.println("TILTVA 4 -> 1 - 1000000 TILTVA");
         System.out.print("Az intervallum: ");
-        funk[1] = sor((byte)1, (byte)7);
+        funk[1] = sor((byte)1, (byte)6);
         
         funk[2] = 1;
-        if(funk[0] != 1){                                                       // 0921
+        if(funk[0] != 1){                                                       // 0921#5
             System.out.print("Kérem, határozza meg a maximális szál számot (1 - 15 közé eshet): ");
             funk[2] = sor((byte)1, (byte)15);
         }
