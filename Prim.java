@@ -13,14 +13,14 @@ public class Prim {
     public long indulIdo, vegeIdo;
     public static CopyOnWriteArrayList<Integer> megtalaltPrimLista = new CopyOnWriteArrayList<>();
     protected static CopyOnWriteArrayList<String> csvBeLista = new CopyOnWriteArrayList<>();
-    private static boolean optimalis;           //0810
+    private static boolean optimalis;
     
     public Prim() {
         szalDb = 1;
         n = 10000;
     }
     
-    public Prim(boolean optimalis) {            //0810
+    public Prim(boolean optimalis) {
         Prim.optimalis = optimalis;
     }
     
@@ -63,7 +63,7 @@ public class Prim {
         return (osztoDb == 1);
     }
     
-    public CopyOnWriteArrayList<Integer> primLista(int a, int b) {          //0810
+    public CopyOnWriteArrayList<Integer> primLista(int a, int b) {
         CopyOnWriteArrayList<Integer> lista = new CopyOnWriteArrayList<>();
         for (int i = a; i <= b; i++){
             if (optimalis){

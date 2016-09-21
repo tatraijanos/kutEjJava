@@ -51,9 +51,7 @@ public class Prim8 extends Prim {
     }
     
     private Integer[] ujFelPrimLista() {
-    //private List<Integer> UjFelPrimLista(){
         ArrayList<Short> prim = new ArrayList<>();
-        //ArrayList<Integer> felPr = new ArrayList<>();
         Set<Integer> felPr = new HashSet<>();
         short szam = 2;
         
@@ -67,12 +65,9 @@ public class Prim8 extends Prim {
             szam++;
         }
         
-        //Set<Integer> uniqSe = new HashSet<>(felPr);
-        //ArrayList<Integer> lista = new ArrayList<>(uniqSe);
         ArrayList<Integer> lista = new ArrayList<>(felPr);
         Collections.sort(lista);
         
-        //return lista.subList(0, szalDb);
         return lista.subList(0, szalDb).toArray(new Integer[szalDb]);
     }
     

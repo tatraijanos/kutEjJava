@@ -48,9 +48,9 @@ public class Indito{
     }
 
     public static void main(String[] args) {
-        boolean optimalis = true;                               //0810
-        if(args.length == 1 && args[0].equals("-hagyomanyos"))  //0810
-            optimalis = false;                                  //0810
+        boolean optimalis = true;
+        if(args.length == 1 && args[0].equals("-hagyomanyos"))
+            optimalis = false;
 
         feltolt();
         Prim prOsztaly = new Prim(optimalis);
@@ -140,7 +140,6 @@ public class Indito{
             System.out.println(prOsztaly.ujMentCSV("primJavaAdmin"));
         
         System.out.println("");
-        //csvBeLista.clear();
         prOsztaly.csvBeListaTorlse();
         main(args);
     }
@@ -181,12 +180,12 @@ public class Indito{
         System.out.println("2 -> 1 - 10000");
         System.out.println("3 -> 1 - 100000");
         System.out.println("4 -> 1 - 1000000");
-        System.out.println("5 -> 1 - 10000000");                //0810
-        System.out.println("6 -> 1 - 100000000");               //0810
-        System.out.println("7 -> 1 - 1000000000");              //0810
+        System.out.println("5 -> 1 - 10000000");
+        System.out.println("6 -> 1 - 100000000");
+        System.out.println("7 -> 1 - 1000000000");
         //System.out.println("TILTVA 4 -> 1 - 1000000 TILTVA");
         System.out.print("Az intervallum: ");
-        funk[1] = sor((byte)1, (byte)7);                        //0810
+        funk[1] = sor((byte)1, (byte)7);
         
         funk[2] = 1;
         if(funk[0] != 1){
@@ -215,7 +214,7 @@ public class Indito{
                 if(!ok)
                     System.out.print("Ismeretlen parancs! Újra! ");
             }
-            catch(IOException | NumberFormatException e){                       //0913
+            catch(IOException | NumberFormatException e){
                 System.out.print("Ismeretlen parancs! Újra! ");
             }
         }
@@ -246,7 +245,7 @@ public class Indito{
             }
             return retadm;
         }
-        catch(IOException | NumberFormatException ex){                          //0913
+        catch(IOException | NumberFormatException ex){
             return null;
         }
     }
@@ -270,7 +269,7 @@ public class Indito{
                 else if(daraboltPar.length > hossz)
                     System.out.println("Több számot adott meg a szükségesnél, a maradék eldobásra került.");
             }
-            catch(IOException | NumberFormatException e){                       //0913
+            catch(IOException | NumberFormatException e){
                 System.out.print("Nem egész! Újra!");
             }
         }
